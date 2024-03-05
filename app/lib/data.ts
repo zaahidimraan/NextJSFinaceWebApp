@@ -10,6 +10,7 @@ import {
 } from './definitions';
 import { formatCurrency } from './utils';
 
+
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
@@ -229,3 +230,7 @@ export async function getUser(email: string) {
     throw new Error('Failed to fetch user.');
   }
 }
+function noStore() {
+  throw new Error('Function not implemented.');
+}
+
