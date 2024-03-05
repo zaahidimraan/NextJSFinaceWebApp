@@ -14,6 +14,7 @@ import { formatCurrency } from './utils';
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
+  //noStore();
 
   try {
     // Artificially delay a response for demo purposes.
@@ -231,6 +232,11 @@ export async function getUser(email: string) {
   }
 }
 function noStore() {
-  throw new Error('Function not implemented.');
+  try {
+    fetch('/api/revenue', { cache: 'no-store' })
+
+  } catch (error) {
+    throw new Error('Function not implemented.');
+  }
 }
 
